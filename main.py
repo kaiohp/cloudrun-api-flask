@@ -9,18 +9,19 @@ app = Flask(__name__)
 
 @app.route("/users", methods=["GET"])
 def get_users():
-    conn_url = 'postgresql+psycopg2://postgres:123456@postgresServer:5432/postgres'
+    # # conn_url = 'postgresql+psycopg2://postgres:123456@postgresServer:5432/postgres'
 
-    engine = create_engine(conn_url)
+    # # engine = create_engine(conn_url)
 
-    db = scoped_session(sessionmaker(bind=engine))
+    # # db = scoped_session(sessionmaker(bind=engine))
 
-    query_rows = db.execute(text("SELECT * FROM tech_users;")).fetchall()
-    results = {"data": []}
-    for row in query_rows:
-        results["data"].append([row[0], row[1]])
-    print(results)
-    return json.dumps(results)
+    # query_rows = db.execute(text("SELECT * FROM tech_users;")).fetchall()
+    # results = {"data": []}
+    # for row in query_rows:
+    #     results["data"].append([row[0], row[1]])
+    # print(results)
+    # return json.dumps(results)
+    return "DEU CERTO!!"
 
 
 if __name__ == "__main__":
